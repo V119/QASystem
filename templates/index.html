@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>iDeal-FAQ</title>
+</head>
+<body>
+    <p>
+        <form action="/index/" method="post">
+        {% csrf_token %}
+            <label>question: </label>
+            <input type="text" name="question" size="150">
+            <p><input type="submit" value="提交"></p>
+        </form>
+    </p>
+    <p>
+        <label>answer:</label>
+        <table border="1">
+            <thead>
+                <tr>
+                    <td>算法</td>
+                    <td>匹配问题</td>
+                    <td>相似度</td>
+                    <td>回答</td>
+                </tr>
+            </thead>
+            <tbody>
+                {% for line in answers %}
+                <tr>
+                    <td>{{ line.algo }}</td>
+                    <td>{{ line.ques }}</td>
+                    <td>{{ line.sim }}</td>
+                    <td>{{ line.ans }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </p>
+</body>
+</html>

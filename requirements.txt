@@ -1,0 +1,4 @@
+Django~=4.0.5
+jieba~=0.42.1
+numpy~=1.22.4
+scikit-learn~=1.1.1
